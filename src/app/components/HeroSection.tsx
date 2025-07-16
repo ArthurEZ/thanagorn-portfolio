@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import Player from "lottie-react";
 import waveloop from "../../../public/waveloop.json";
@@ -54,20 +53,14 @@ export default function HeroSection() {
           100% { opacity: 1; }
         }
       `}</style>
-      <div
-        className={`w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-6 sm:mb-8 shadow-xl ring-4 ring-blue-400/30 overflow-hidden transition-all duration-700 z-10 ${show ? "opacity-100" : "opacity-0"}`}
-        style={show ? { animation: "fadeUp 2s 1s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
-      >
-        <Image src="/Profile.png" alt="Profile Icon" width={192} height={192} className="object-cover w-full h-full" />
-      </div>
       <h1
-        className={`text-3xl sm:text-5xl md:text-7xl font-extrabold mb-3 sm:mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg leading-[1.15] md:leading-[1.1] transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`text-4xl sm:text-6xl md:text-8xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg leading-[1.1] transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.5s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Thanagorn Portfolio
       </h1>
       <p
-        className={`text-lg sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium mb-6 sm:mb-8 max-w-xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`text-xl sm:text-3xl md:text-4xl text-gray-600 dark:text-gray-300 font-medium mb-8 sm:mb-10 max-w-2xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.3s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Aspiring Web Developer & Designer
@@ -75,7 +68,7 @@ export default function HeroSection() {
       <button
         type="button"
         onClick={handleExploreClick}
-        className={`inline-block px-6 sm:px-8 py-3 rounded-full bg-blue-600 text-white text-base sm:text-lg font-semibold shadow hover:bg-blue-700 transition mt-2 sm:mt-4 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`inline-block px-8 sm:px-12 py-4 rounded-full bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 text-white text-lg sm:text-2xl font-bold shadow-xl hover:scale-105 hover:shadow-2xl hover:from-blue-700 hover:to-orange-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300 mt-2 sm:mt-4 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.45s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Explore My Work
