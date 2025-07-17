@@ -5,7 +5,7 @@ import ForCustomer from "./ForCustomer";
 import ForCompany from "./ForCompany";
 
 export default function WhatICanDoPage() {
-  const [tab, setTab] = useState<"customer" | "company">("customer");
+  const [tab, setTab] = useState<"customer" | "company" | null>(null);
 
   return (
     <section className="w-full max-w-2xl mx-auto px-4 py-12">
@@ -24,8 +24,11 @@ export default function WhatICanDoPage() {
           For Company
         </button>
       </div>
-      <div className="bg-white dark:bg-black/60 rounded-2xl shadow p-6 min-h-[180px] transition-colors duration-300">
-        {tab === "customer" ? <ForCustomer /> : <ForCompany />}
+      <div
+        className={`bg-white dark:bg-black/60 rounded-2xl shadow p-6 min-h-[180px] transition-all duration-500 ${tab ? "opacity-100" : "opacity-0 pointer-events-none select-none"}`}
+      >
+        {tab === "customer" && <ForCustomer />}
+        {tab === "company" && <ForCompany />}
       </div>
     </section>
   );
