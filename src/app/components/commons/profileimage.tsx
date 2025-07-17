@@ -32,7 +32,7 @@ export default function ProfileImage() {
         alt="Profile picture"
         width={220}
         height={220}
-        className="rounded-full shadow-lg object-cover flex-shrink-0 ring-4 ring-blue-200 dark:ring-violet-700 mb-4 tablet:mb-0"
+        className="rounded-full shadow-lg object-cover flex-shrink-0 ring-4 ring-blue-200 dark:ring-violet-700 mb-4 tablet:mb-0 bg-black"
         priority
       />
       <div className="flex flex-row gap-4 mt-10">
