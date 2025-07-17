@@ -9,6 +9,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --breakpoint-mobile: 450px;
   --breakpoint-tablet-md: 620px;
   --breakpoint-tablet: 900px;
@@ -16,6 +17,7 @@
   --breakpoint-desktop-md: 1145px;
   --breakpoint-desktop-lg: 1250px;
   --breakpoint-tripadvisor: 1340px;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

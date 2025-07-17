@@ -4,7 +4,7 @@ import Loading from "./components/loadingPage";
 
 const HeroSection = dynamic(() => import("./components/HeroSection"));
 const AboutSection = dynamic(() => import("./components/AboutSection"));
-const SkillsSection = dynamic(() => import("./components/SkillsSection"));
+const SkillsSection = dynamic(() => import("./components/ExperienceSection"));
 const ProjectsSection = dynamic(() => import("./components/ProjectsSection"));
 const ContactSection = dynamic(() => import("./components/ContactSection"));
 const FooterSection = dynamic(() => import("./components/FooterSection"));

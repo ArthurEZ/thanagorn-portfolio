@@ -39,8 +39,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black text-center relative overflow-hidden px-4 sm:px-6 md:px-8">
-      <div className="absolute bottom-[-250px] lg:bottom-[-150px] left-1/2 -translate-x-1/2 w-[200vw] h-[100vh] lg:w-[100vw]  z-0 pointer-events-none opacity-60">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black text-center relative overflow-hidden px-4 mobile:px-6 tablet:px-8">
+      <div className="absolute bottom-[-250px] tripadvisor:bottom-[-150px] left-1/2 -translate-x-1/2 w-[200vw] h-[100vh] tripadvisor:w-[100vw]  z-0 pointer-events-none opacity-60">
         <Player autoplay loop animationData={waveloop} style={{ width: '100%', height: '100%' }} />
       </div>
       <style>{`
@@ -54,13 +54,13 @@ export default function HeroSection() {
         }
       `}</style>
       <h1
-        className={`text-4xl sm:text-6xl md:text-8xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg leading-[1.1] transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`text-4xl mobile:text-6xl tablet:text-8xl font-extrabold mb-4 mobile:mb-6 bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg leading-[1.1] transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.5s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Thanagorn Portfolio
       </h1>
       <p
-        className={`text-xl sm:text-3xl md:text-4xl text-gray-600 dark:text-gray-300 font-medium mb-8 sm:mb-10 max-w-2xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`text-xl mobile:text-3xl tablet:text-4xl text-gray-600 dark:text-gray-300 font-medium mb-8 mobile:mb-10 max-w-2xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.3s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Aspiring Web Developer & Designer
@@ -68,7 +68,7 @@ export default function HeroSection() {
       <button
         type="button"
         onClick={handleExploreClick}
-        className={`inline-block px-8 sm:px-12 py-4 rounded-full bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 text-white text-lg sm:text-2xl font-bold shadow-xl hover:scale-105 hover:shadow-2xl hover:from-blue-700 hover:to-orange-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300 mt-2 sm:mt-4 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
+        className={`inline-block px-8 mobile:px-12 py-4 rounded-full bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 text-white text-lg mobile:text-2xl font-bold shadow-xl hover:scale-105 hover:shadow-2xl hover:from-blue-700 hover:to-orange-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300 mt-2 mobile:mt-4 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.45s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
         Explore My Work
