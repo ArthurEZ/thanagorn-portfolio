@@ -38,7 +38,7 @@ export default function AboutSection() {
           <ProfileImage />
         </div>
         <article className="flex-1">
-          <h2 className="text-3xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
+          <h2 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
             About Me
           </h2>
           <div className="border-b border-gray-200 dark:border-gray-700 mb-4" />

@@ -1,27 +1,34 @@
 import { ReactNode } from "react";
+import Badge from "./Badge";
 
 interface SkillCardProps {
   icon?: ReactNode;
   title: string;
   description: string;
+  badges: string[];
   className?: string;
 }
 
-export default function SkillCard({ icon, title, description, className = "" }: SkillCardProps) {
+export default function SkillCard({ icon, title, description, badges, className = "" }: SkillCardProps) {
   return (
     <div
-      className={`relative bg-white/70 dark:bg-gray-900/70 rounded-2xl shadow-lg p-6 flex flex-row items-center text-left border border-transparent transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-gradient-to-r hover:from-blue-400 hover:via-violet-400 hover:to-orange-300 ${className}`}
-      style={{ backdropFilter: 'blur(2px)' }}
+      className={`relative bg-white/80 dark:bg-gray-900/70 rounded-3xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:border-blue-400/60 before:absolute before:inset-0 before:rounded-3xl before:border before:border-white/30 before:pointer-events-none before:z-10 min-w-[280px] max-w-[350px] mx-auto ${className}`}
+      style={{ backdropFilter: 'blur(4px)' }}
     >
       {icon && (
-        <div className="mr-6 w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-violet-400 to-orange-400 text-white text-4xl shadow-md flex-shrink-0">
+        <div className="mb-5 flex items-center justify-center text-5xl flex-shrink-0 rounded-full">
           {icon}
         </div>
       )}
-      <div className="flex-1">
-        <h3 className="font-extrabold text-2xl mb-1 drop-shadow-sm">{title}</h3>
-        <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed">{description}</p>
+      <div className="w-full">
+        <h3 className="font-extrabold text-2xl mb-2 drop-shadow-sm tracking-tight">{title}</h3>
+        <p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed mb-3">{description}</p>
+        <div className="flex flex-wrap items-center justify-center">
+          {badges.map((badge) => (
+            <Badge key={badge}>{badge}</Badge>
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+} 

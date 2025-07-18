@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./components/loadingPage";
-import WhatICanDoPage from "./components/WhatICanDoPage/WhatICanDoPage";
+import SkillSection from "./components/SkillSection";
 
 const HeroSection = dynamic(() => import("./components/HeroSection"));
 const AboutSection = dynamic(() => import("./components/AboutSection"));
-const SkillsSection = dynamic(() => import("./components/ExperienceSection"));
+const Experience = dynamic(() => import("./components/ExperienceSection"));
 const ProjectsSection = dynamic(() => import("./components/ProjectsSection"));
 const ContactSection = dynamic(() => import("./components/ContactSection"));
 const FooterSection = dynamic(() => import("./components/FooterSection"));
@@ -64,10 +64,10 @@ export default function Home() {
           <AboutSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
-          <WhatICanDoPage />
+          <SkillSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
-          <SkillsSection />
+          <Experience />
         </Suspense>
         <Suspense fallback={<Loading />}>
           <ProjectsSection />
