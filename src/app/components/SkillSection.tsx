@@ -6,24 +6,34 @@ export default function SkillSection() {
       <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent tracking-tight">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center">
         <SkillCard
-          icon={"⚛️"}
           title="Frontend"
           description="Building beautiful, performant, and scalable user interfaces."
-          badges={["React", "Next.js", "Tailwind CSS", "TypeScript"]}
+          badges={[
+            { src: "/NextjsIcon.svg", alt: "Next.js" },
+            { src: "/DockerIcon.svg", alt: "Docker" },
+            { src: "/NodejsIcon.svg", alt: "Node.js" },
+            { src: "/next.svg", alt: "React" }
+          ]}
           className="animate-fadein"
         />
         <SkillCard
-          icon={"🚂"}
           title="Backend"
           description="Developing robust APIs and backend services."
-          badges={["Node.js", "Express.js", "MongoDB", "Prisma"]}
+          badges={[
+            { src: "/NodejsIcon.svg", alt: "Node.js" },
+            { src: "/DockerIcon.svg", alt: "Docker" },
+            { src: "/next.svg", alt: "Next.js" }
+          ]}
           className="animate-fadein delay-150"
         />
         <SkillCard
-          icon={"🐳"}
           title="Fullstack & DevOps"
           description="Delivering complete solutions, from frontend to backend, with modern deployment."
-          badges={["Docker", "Vercel", "CI/CD", "REST API"]}
+          badges={[
+            { src: "/DockerIcon.svg", alt: "Docker" },
+            { src: "/next.svg", alt: "Next.js" },
+            { src: "/NodejsIcon.svg", alt: "Node.js" }
+          ]}
           className="animate-fadein delay-300"
         />
       </div>

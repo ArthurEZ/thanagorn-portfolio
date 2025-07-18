@@ -20,7 +20,7 @@ export default function AboutSection() {
           setVisible(false);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     observer.observe(section);
     return () => observer.disconnect();
