@@ -2,33 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-const projects = [
-  {
-    image: "/NextjsIcon.svg",
-    title: "Portfolio Website",
-    description: "A personal portfolio website built with Next.js and Tailwind CSS to showcase my work and skills.",
-    link: "#",
-  },
-  {
-    image: "/DockerIcon.svg",
-    title: "Task Manager App",
-    description: "A simple and intuitive task manager app for tracking daily tasks, built with React and TypeScript.",
-    link: "#",
-  },
-  {
-    image: "/NodejsIcon.svg",
-    title: "Landing Page Design",
-    description: "A modern, responsive landing page design for a startup, using Tailwind CSS and Figma.",
-    link: "#",
-  },
-  {
-    image: "/next.svg",
-    title: "Blog Platform",
-    description: "A full-stack blog platform with Markdown support, authentication, and deployment on Vercel.",
-    link: "#",
-  },
-];
+import { projects } from "@/texts/Project";
 
 export default function ProjectsSection() {
   const [current, setCurrent] = useState(0);
@@ -68,8 +42,8 @@ export default function ProjectsSection() {
           >
             <span className="text-3xl text-orange-400">&#8592;</span>
           </button>
-          <div className="z-10 w-80 h-80 tablet:w-[80%] tablet:h-150 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto transition-all duration-500" style={{ opacity: animating ? 0.5 : 1 }}>
-            <Image src={project.image} alt={project.title} width={220} height={220} className="object-contain" />
+          <div className="z-10 w-80 h-80 tablet:w-[75%] tablet:h-175 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto transition-all duration-500 relative" style={{ opacity: animating ? 0.5 : 1 }}>
+            <Image src={project.image} alt={project.title} fill className="object-cover" />
           </div>
           <button
             onClick={handleNext}
@@ -82,8 +56,8 @@ export default function ProjectsSection() {
         </div>
         {/* Mobile arrows below image */}
         <div className="flex flex-col items-center w-full sm:hidden">
-          <div className="z-10 w-[100%] h-60 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto mb-4 transition-all duration-500" style={{ opacity: animating ? 0.5 : 1 }}>
-            <Image src={project.image} alt={project.title} width={180} height={180} className="object-contain" />
+          <div className="z-10 w-[100%] h-60 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto mb-4 transition-all duration-500 relative" style={{ opacity: animating ? 0.5 : 1 }}>
+            <Image src={project.image} alt={project.title} fill className="object-cover" />
           </div>
           <div className="flex justify-center gap-8 w-full">
             <button
