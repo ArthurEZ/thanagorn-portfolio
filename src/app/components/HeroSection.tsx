@@ -6,7 +6,7 @@ import waveloop from "../../../public/waveloop.json";
 
 export default function HeroSection() {
   const [show, setShow] = useState(false);
-  const [showText, setShowText] = useState(false); // NEW
+  const [showText, setShowText] = useState(false);
   const hasAutoScrolled = useRef(false);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black text-center relative overflow-hidden px-4 mobile:px-6 tablet:px-8">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black text-center relative overflow-hidden">
       <div className="absolute bottom-[-250px] tripadvisor:bottom-[-150px] left-1/2 -translate-x-1/2 w-[200vw] h-[100vh] tripadvisor:w-[100vw]  z-0 pointer-events-none opacity-60">
         <Player autoplay loop animationData={waveloop} style={{ width: '100%', height: '100%' }} />
       </div>
@@ -63,7 +63,7 @@ export default function HeroSection() {
         className={`text-xl mobile:text-3xl tablet:text-4xl text-gray-600 dark:text-gray-300 font-medium mb-8 mobile:mb-10 max-w-2xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.3s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
-        Aspiring Web Developer & Designer
+        Student of CEDT
       </p>
       <button
         type="button"

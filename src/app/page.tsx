@@ -7,13 +7,12 @@ const HeroSection = dynamic(() => import("./components/HeroSection"));
 const AboutSection = dynamic(() => import("./components/AboutSection"));
 const Experience = dynamic(() => import("./components/ExperienceSection"));
 const ProjectsSection = dynamic(() => import("./components/ProjectsSection"));
-const ContactSection = dynamic(() => import("./components/ContactSection"));
 const FooterSection = dynamic(() => import("./components/FooterSection"));
 
 export default function Home() {
   const starColors = ["#2563eb", "#8b5cf6", "#f59e42"];
   return (
-    <main className="min-h-screen bg-black text-gray-100 flex flex-col items-center px-4 relative overflow-hidden">
+    <main className="min-h-screen bg-black text-gray-100 flex flex-col items-center relative overflow-hidden">
       {/* Starfield background */}
       <style>{`
         .starfield {
@@ -71,9 +70,6 @@ export default function Home() {
         </Suspense>
         <Suspense fallback={<Loading />}>
           <ProjectsSection />
-        </Suspense>
-        <Suspense fallback={<Loading />}>
-          <ContactSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
           <FooterSection />
