@@ -29,7 +29,7 @@ export default function ExperienceSection() {
   return (
     <section
       ref={sectionRef}
-      className={`w-full px-4 mobile:px-8 tablet:px-16 mb-12 transition-all duration-700 ease-out translate-y-0"`}
+      className={`w-full px-4 mobile:px-8 tablet:px-16 mb-12 transition-all duration-700 ease-out translate-y-0`}
       style={{ willChange: "opacity, transform" }}
     >
       <div className="relative flex flex-col items-center">

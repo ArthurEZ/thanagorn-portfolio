@@ -17,7 +17,7 @@ export default function ProjectsSection() {
     setTimeout(() => {
       setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
       setAnimating(false);
-    }, 350);
+    }, 500);
   };
   const handleNext = () => {
     if (animating) return;
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
     setTimeout(() => {
       setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
       setAnimating(false);
-    }, 350);
+    }, 500);
   };
 
   return (

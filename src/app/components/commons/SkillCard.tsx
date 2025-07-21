@@ -26,7 +26,7 @@ export default function SkillCard({ title, description, badges, className = "" }
         <div className="flex flex-wrap items-center justify-center">
           {badges.map((badge) => (
             <FrameIcon key={badge.alt} color={badge.color}>
-              <Image src={badge.src} alt={badge.alt} width={70} height={70} />
+              <Image src={badge.src} alt={badge.alt} width={40} height={40} />
             </FrameIcon>
           ))}
         </div>

@@ -63,7 +63,7 @@ export default function HeroSection() {
         className={`text-xl mobile:text-3xl tablet:text-4xl text-gray-600 dark:text-gray-300 font-medium mb-8 mobile:mb-10 max-w-2xl mx-auto transition-all duration-700 z-10 ${showText ? "opacity-100" : "opacity-0"}`}
         style={showText && show ? { animation: "lightBlink 1.2s 0.3s cubic-bezier(0.4,0,0.2,1) forwards" } : {}}
       >
-        Aspiring Web Developer & Designer
+        Student of CEDT
       </p>
       <button
         type="button"
