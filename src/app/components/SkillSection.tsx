@@ -45,9 +45,7 @@ export default function SkillSection() {
           description="Building beautiful, performant, and scalable user interfaces."
           badges={[
             { src: "/NextjsIcon.svg", alt: "Next.js" },
-            { src: "/DockerIcon.svg", alt: "Docker" },
-            { src: "/NodejsIcon.svg", alt: "Node.js" },
-            { src: "/next.svg", alt: "React" }
+            { src: "/ReactIcon.png", alt: "React" },
           ]}
           className="animate-fadein z-10"
         />
@@ -56,8 +54,6 @@ export default function SkillSection() {
           description="Developing robust APIs and backend services."
           badges={[
             { src: "/NodejsIcon.svg", alt: "Node.js" },
-            { src: "/DockerIcon.svg", alt: "Docker" },
-            { src: "/next.svg", alt: "Next.js" }
           ]}
           className="animate-fadein delay-150 z-10"
         />
@@ -66,8 +62,7 @@ export default function SkillSection() {
           description="Delivering complete solutions, from frontend to backend, with modern deployment."
           badges={[
             { src: "/DockerIcon.svg", alt: "Docker" },
-            { src: "/next.svg", alt: "Next.js" },
-            { src: "/NodejsIcon.svg", alt: "Node.js" }
+            { src: "/vercel.png", alt: "vercel" },
           ]}
           className="animate-fadein delay-300 z-10"
         />

@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import TypedText from "./commons/TypedText";
+import { Experience } from "@/texts/Experience";
+import Image from "next/image";
 
 export default function ExperienceSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,38 +46,33 @@ export default function ExperienceSection() {
           .node-pulse-2 { animation: node-pulse-2 2.7s cubic-bezier(0.4,0,0.2,1) infinite; }
         `}</style>
         {/* vertical timeline line */}
-        <div className="absolute left-1/2 top-[-60px] w-0.5 h-[80vh] desktop-md:h-[50vh] bg-gradient-to-b from-blue-400 via-violet-400 to-orange-300 -translate-x-1/2 z-0 rounded-full" />
+        <div className="absolute left-1/2 top-[-60px] w-0.5 h-[80vh] tablet:h-[70vh] desktop:h-[55vh] bg-gradient-to-b from-blue-400 via-violet-400 to-orange-300 -translate-x-1/2 z-0 rounded-full" />
         <ul className="flex flex-col gap-20 w-full">
-          {/* First experience */}
-          <li className="relative flex flex-col md:flex-row items-center md:items-start gap-6 w-full mt-12">
-            <div className="absolute left-1/2 -translate-x-1/2 top-12 w-11 h-11 rounded-full bg-white border-4 border-blue-400 shadow-lg ring-2 ring-blue-200 dark:ring-violet-700 z-10 flex items-center justify-center node-pulse-1" />
-            <div className="mt-28 md:mt-12 ml-auto w-full md:w-1/2 pl-0 md:pl-20 text-center md:text-left">
-              <h3 className="font-bold text-lg">
-                <TypedText text="Frontend Developer Intern @ Tech Startup" start={visible} />
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                <TypedText text="Jun 2023 – Aug 2023" start={visible} />
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-1">
-                <TypedText text="Built and maintained modern React/Next.js web apps, collaborated with designers, and improved UI/UX with Tailwind CSS." start={visible} stay={true}/>
-              </p>
-            </div>
-          </li>
-          {/* Second experience */}
-          <li className="relative flex flex-col md:flex-row-reverse items-center md:items-start gap-6 w-full">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-11 h-11 rounded-full bg-white border-4 border-violet-400 shadow-lg ring-2 ring-violet-200 dark:ring-violet-600 z-10 flex items-center justify-center node-pulse-2" />
-            <div className="mt-16 md:mt-0 mr-auto w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right">
-              <h3 className="font-bold text-lg">
-                <TypedText text="Freelance Web Developer" start={visible} />
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                <TypedText text="2022 – Present" start={visible} />
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-1">
-                <TypedText text="Designed and deployed responsive websites for small businesses using Next.js, Vercel, and modern deployment workflows." start={visible} stay={true}/>
-              </p>
-            </div>
-          </li>
+          {Experience.map((exp, idx) => (
+            <li
+              key={idx}
+              className={`relative flex flex-col md:flex-row${idx % 2 === 1 ? "-reverse" : ""} items-center md:items-start gap-6 w-full${idx === 0 ? " mt-12" : ""}`}
+            >
+              <div
+                className={`absolute left-1/2 -translate-x-1/2 ${idx === 0 ? "top-12" : "top-0"} w-11 h-11 rounded-full bg-white border-4 ${idx === 0 ? "border-blue-400 shadow-lg ring-2 ring-blue-200 dark:ring-violet-700 node-pulse-1" : "border-violet-400 shadow-lg ring-2 ring-violet-200 dark:ring-violet-600 node-pulse-2"} z-10 flex items-center justify-center`}
+              >
+                {exp.icon && (
+                  <Image src={exp.icon} alt={exp.title} width={20} height={20} />
+                )}
+              </div>
+              <div className={`${idx === 0 ? "mt-28 md:mt-12 ml-auto w-full md:w-1/2 pl-0 md:pl-20 text-center md:text-left" : "mt-16 md:mt-0 mr-auto w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right"}`}>
+                <h3 className="font-bold text-lg">
+                  <TypedText text={exp.title} start={visible} />
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <TypedText text={exp.date} start={visible} />
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 mt-1">
+                  <TypedText text={exp.description} start={visible} stay={true}/>
+                </p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

@@ -15,7 +15,7 @@
   --breakpoint-tablet: 900px;
   --breakpoint-tripadvisor-xs: 1000px;
   --breakpoint-desktop-md: 1145px;
-  --breakpoint-desktop-lg: 1250px;
+  --breakpoint-desktop: 1250px;
   --breakpoint-tripadvisor: 1340px;
 
   --font-sans: var(--font-geist-sans);
