@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { navLinks } from '@/texts/navbar';
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('section'); // Assumes HeroSection is the first section
+      const heroSection = document.getElementById('hero');
       if (heroSection) {
         const heroBottom = heroSection.getBoundingClientRect().bottom;
         setShowNavbar(heroBottom <= 0);
@@ -46,18 +47,32 @@ const Navbar = () => {
         </button>
         {/* Desktop nav */}
         <ul className="hidden md:flex gap-6 text-xl font-medium text-gray-900 dark:text-gray-100">
-          <li><a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors pt-sans-bold" onClick={handleNavClick('about')}>About</a></li>
-          <li><a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors pt-sans-bold" onClick={handleNavClick('skills')}>Skills</a></li>
-          <li><a href="#experience" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors pt-sans-bold" onClick={handleNavClick('experience')}>Experience</a></li>
-          <li><a href="#projects" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors pt-sans-bold" onClick={handleNavClick('projects')}>Projects</a></li>
+          {navLinks.map(link => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className={`${link.className} transition-colors pt-sans-bold`}
+                onClick={handleNavClick(link.id)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       {/* Mobile nav menu */}
-      <ul className={`md:hidden flex flex-col gap-4 text-lg font-medium text-gray-900 dark:text-gray-100 bg-white/95 dark:bg-black/95 px-8 py-6 absolute w-full left-0 top-full shadow-lg transition-all duration-300 ${menuOpen ? 'max-h-96 opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden'}`} style={{zIndex: 49}}>
-        <li><a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors pt-sans-bold" onClick={handleNavClick('about')}>About</a></li>
-        <li><a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors pt-sans-bold" onClick={handleNavClick('skills')}>Skills</a></li>
-        <li><a href="#experience" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors pt-sans-bold" onClick={handleNavClick('experience')}>Experience</a></li>
-        <li><a href="#projects" className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors pt-sans-bold" onClick={handleNavClick('projects')}>Projects</a></li>
+      <ul className={`md:hidden flex flex-col gap-4 text-lg font-medium text-gray-900 dark:text-gray-100 bg-white/95 dark:bg-black/95 px-8 py-6 absolute w-full left-0 top-full shadow-lg transition-all duration-300 z-40 ${menuOpen ? 'max-h-96 opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden'}`}>
+        {navLinks.map(link => (
+          <li key={link.id}>
+            <a
+              href={`#${link.id}`}
+              className={`${link.className} transition-colors pt-sans-bold`}
+              onClick={handleNavClick(link.id)}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
