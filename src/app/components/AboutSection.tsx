@@ -31,7 +31,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className={`w-full px-4 mobile:px-8 tablet:px-16 mb-12 pt-16 tablet:pt-24 flex justify-center transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+      className={`w-full px-4 mobile:px-8 tablet:px-16 mb-12 pt-16 tablet:pt-32 flex justify-center transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ willChange: "opacity, transform" }}
     >
       <div className="flex flex-col tablet:flex-row items-center tablet:items-center gap-25 w-full">

@@ -27,11 +27,12 @@ export default function SkillSection() {
 
   return (
     <section
+      id="skills"
       ref={sectionRef}
       className={`w-full max-w-5xl mx-auto px-4 py-16 transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ willChange: "opacity, transform" }}
     >
-      <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent tracking-tight">Skills</h2>
+      <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 via-violet-500 to-orange-500 bg-clip-text text-transparent tracking-tight">What I can do</h2>
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center">
         {/* vertical line */}
         <div className="block md:hidden absolute left-1/2 top-0 w-0.5 h-[100vh] bg-blue-400 -translate-x-1/2 z-0" />

@@ -30,7 +30,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="w-full px-4 mobile:px-8 tablet:px-16 mb-12 flex flex-col items-center">
+    <section id="projects" className="w-full px-4 mobile:px-8 tablet:px-16 mb-12 flex flex-col items-center">
       <div className="flex flex-col items-center w-full mb-10">
         {/* Desktop arrows */}
         <div className="hidden sm:flex justify-center items-center w-full relative">
