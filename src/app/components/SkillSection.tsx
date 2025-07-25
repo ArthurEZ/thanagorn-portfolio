@@ -27,6 +27,7 @@ export default function SkillSection() {
 
   return (
     <section
+      id="skills"
       ref={sectionRef}
       className={`w-full max-w-5xl mx-auto px-4 py-16 transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
       style={{ willChange: "opacity, transform" }}
