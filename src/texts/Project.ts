@@ -1,5 +1,3 @@
-import { title } from "process";
-
 const ImageURLBase = {
   mseb: "/project/mseb",
   medmory: "/project/medmory"
