@@ -6,6 +6,7 @@ import { projects } from "@/texts/Project";
 
 export default function ProjectsSection() {
   const [current, setCurrent] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
   const project = projects[current];
@@ -16,6 +17,7 @@ export default function ProjectsSection() {
     setAnimating(true);
     setTimeout(() => {
       setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+      setCurrentImage(0);
       setAnimating(false);
     }, 500);
   };
@@ -25,8 +27,17 @@ export default function ProjectsSection() {
     setAnimating(true);
     setTimeout(() => {
       setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+      setCurrentImage(0);
       setAnimating(false);
     }, 500);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImage((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -43,7 +54,37 @@ export default function ProjectsSection() {
             <span className="text-3xl text-orange-400">&#8592;</span>
           </button>
           <div className="z-10 w-80 h-80 tablet:w-[75%] tablet:h-175 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto transition-all duration-500 relative" style={{ opacity: animating ? 0.5 : 1 }}>
-            <Image src={project.image} alt={project.title} fill className="object-cover" />
+            <Image src={project.images[currentImage]} alt={`${project.title} - Image ${currentImage + 1}`} fill className="object-cover" />
+            {project.images.length > 1 && (
+              <>
+                <button
+                  onClick={handlePrevImage}
+                  aria-label="Previous image"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 rounded-full p-1.5 shadow transition"
+                >
+                  <span className="text-xl text-white">&#8592;</span>
+                </button>
+                <button
+                  onClick={handleNextImage}
+                  aria-label="Next image"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 rounded-full p-1.5 shadow transition"
+                >
+                  <span className="text-xl text-white">&#8594;</span>
+                </button>
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+                  {project.images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImage(idx)}
+                      aria-label={`Go to image ${idx + 1}`}
+                      className={`w-2 h-2 rounded-full transition ${
+                        idx === currentImage ? "bg-orange-400 w-6" : "bg-white/70 hover:bg-white"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
           <button
             onClick={handleNext}
@@ -57,7 +98,37 @@ export default function ProjectsSection() {
         {/* Mobile arrows below image */}
         <div className="flex flex-col items-center w-full sm:hidden">
           <div className="z-10 w-[100%] h-60 rounded-2xl overflow-hidden border-4 border-orange-300 shadow-lg flex items-center justify-center mx-auto mb-4 transition-all duration-500 relative" style={{ opacity: animating ? 0.5 : 1 }}>
-            <Image src={project.image} alt={project.title} fill className="object-cover" />
+            <Image src={project.images[currentImage]} alt={`${project.title} - Image ${currentImage + 1}`} fill className="object-cover" />
+            {project.images.length > 1 && (
+              <>
+                <button
+                  onClick={handlePrevImage}
+                  aria-label="Previous image"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 rounded-full p-1.5 shadow transition"
+                >
+                  <span className="text-xl text-white">&#8592;</span>
+                </button>
+                <button
+                  onClick={handleNextImage}
+                  aria-label="Next image"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 rounded-full p-1.5 shadow transition"
+                >
+                  <span className="text-xl text-white">&#8594;</span>
+                </button>
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+                  {project.images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImage(idx)}
+                      aria-label={`Go to image ${idx + 1}`}
+                      className={`w-2 h-2 rounded-full transition ${
+                        idx === currentImage ? "bg-orange-400 w-6" : "bg-white/70 hover:bg-white"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
           <div className="flex justify-center gap-8 w-full">
             <button
