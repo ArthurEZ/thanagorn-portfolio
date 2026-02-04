@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "@/texts/Project";
 
 export default function ProjectsSection() {
@@ -10,6 +10,16 @@ export default function ProjectsSection() {
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
   const project = projects[current];
+
+  useEffect(() => {
+    if (project.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [current, project.images.length]);
 
   const handlePrev = () => {
     if (animating) return;

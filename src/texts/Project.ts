@@ -1,3 +1,5 @@
+import { title } from "process";
+
 const ImageURLBase = {
   mseb: "/project/mseb",
   medmory: "/project/medmory"
@@ -11,9 +13,9 @@ export const projects = [
     link: "https://mseb.md.kku.ac.th",
   },
   {
-    images: [`${ImageURLBase.medmory}/medmory_main.png`],
-    title: "Medmory",
-    description: "asdasdasd",
+    images: [`${ImageURLBase.medmory}/medmory_main.png`, `${ImageURLBase.medmory}/medmory_room.png`,],
+    title: "MedMory Game",
+    description: "an online card game website to help medical students memorize medical terms through a fun and interactive matching game. Students can create or join rooms to compete with friends or other students or play alone to practice with themselves.",
     link: "https://medmorygame.com",
   }
 ];
